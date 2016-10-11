@@ -9,12 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var Person = (function () {
-    function Person() {
-    }
-    return Person;
-}());
-exports.Person = Person;
 var PEOPLE = [
     { id: 1, name: 'John', fact: 'Has webbed feet' },
     { id: 2, name: 'Jeff', fact: 'Is a Jedi master' },

@@ -22,6 +22,7 @@ var PersonsComponent = (function () {
     };
     PersonsComponent.prototype.ngOnInit = function () {
         this.getPersons();
+        //    this.persons.push( new persons(20,"Test","Test fact"););
     };
     PersonsComponent.prototype.onSelect = function (person) {
         this.selectedPerson = person;

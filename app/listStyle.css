@@ -52,6 +52,7 @@
 
 
 .viewMore{
+    position: absolute;
     float: right;
 /*    margin-bottom: 400px;*/
 }

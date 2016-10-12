@@ -1,4 +1,4 @@
-/*
+
 .details h2{
     text-decoration: underline;
 }
@@ -7,7 +7,9 @@
     border-style: double;
     border-color: #607D8B;
     padding: 20px;
-}*/
+    width: 300px;
+    margin-top: 20px;
+}
 
 
 label {

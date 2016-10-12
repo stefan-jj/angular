@@ -26,6 +26,7 @@ export class PersonsComponent implements OnInit{
     
   ngOnInit(): void {
     this.getPersons();
+//    this.persons.push( new persons(20,"Test","Test fact"););
   }
     
   onSelect(person: Person): void {

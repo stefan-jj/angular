@@ -10,7 +10,7 @@ export class PersonService {
     } 
     
     getPerson(id: number): Promise<Person> {
-      return this.getPersons()
+        return this.getPersons()
                  .then(persons => persons.find(person => person.id === id));
     }
     

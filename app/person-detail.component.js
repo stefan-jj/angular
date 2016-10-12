@@ -20,7 +20,8 @@ var PersonDetailComponent = (function () {
     PersonDetailComponent = __decorate([
         core_1.Component({
             selector: 'my-person-detail',
-            template: "\n    <div *ngIf=\"person\">\n      <h2>{{person.name}}'s details!</h2>\n    <div><label><b>ID:</b> </label>{{person.id}}</div>\n      <div>\n        <label><b>Name:</b> </label>\n        <input [(ngModel)]=\"person.name\" placeholder=\"name\"/>\n      </div>\n      <div>\n        <label><b>Fact:</b> </label>\n        {{person.fact}}\n      </div>\n    </div>\n  "
+            templateUrl: 'app/detailsTemplate.html',
+            styleUrls: ['app/detailsStyle.css']
         }), 
         __metadata('design:paramtypes', [])
     ], PersonDetailComponent);

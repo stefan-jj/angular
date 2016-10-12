@@ -1,0 +1,14 @@
+<div class="listContainer">
+<h1>{{title}}</h1>
+    <h2>Click a person to see their fact...</h2>
+    <ul class="persons">
+      <li *ngFor="let person of persons"
+        [class.selected]="person === selectedPerson"
+        (click)="onSelect(person)">
+        <span class="badge">{{person.id}}</span> {{person.name}}
+      </li>
+    </ul>
+</div>
+<div class="personDetails">
+<my-person-detail [person]="selectedPerson"></my-person-detail>
+</div>

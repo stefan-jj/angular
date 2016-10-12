@@ -1,0 +1,9 @@
+.details h2{
+    text-decoration: underline;
+}
+
+.details{
+    border-style: double;
+    border-color: #607D8B;
+    padding: 20px;
+}

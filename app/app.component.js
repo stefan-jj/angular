@@ -9,23 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var PERSONS = [
-    { id: 1, name: 'John', fact: 'has webbed feet' },
-    { id: 2, name: 'Jeff', fact: 'is a Jedi master' },
-    { id: 3, name: 'Eric', fact: 'is 8 foot tall' },
-    { id: 4, name: 'Stan', fact: 'is a billionnaire' },
-    { id: 5, name: 'Kevin', fact: 'is a cult leader' },
-    { id: 6, name: 'Steve', fact: 'is a professional athlete' },
-    { id: 7, name: 'Jenny', fact: 'owns a restaurant' },
-    { id: 8, name: 'Stacey', fact: 'is a super hero' },
-    { id: 9, name: 'Andy', fact: 'has a robotic arm' },
-    { id: 10, name: 'Ben', fact: 'is a shady warehouse worker' }
-];
+var person_service_1 = require('./person.service');
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(personService) {
+        this.personService = personService;
         this.title = 'List of People';
-        this.persons = PERSONS;
     }
+    AppComponent.prototype.getPersons = function () {
+        var _this = this;
+        this.personService.getPersons().then(function (persons) { return _this.persons = persons; });
+    };
+    AppComponent.prototype.ngOnInit = function () {
+        this.getPersons();
+    };
     AppComponent.prototype.onSelect = function (person) {
         this.selectedPerson = person;
     };
@@ -33,9 +29,10 @@ var AppComponent = (function () {
         core_1.Component({
             selector: 'my-app',
             templateUrl: 'app/listTemplate.html',
-            styleUrls: ['app/listStyle.css']
+            styleUrls: ['app/listStyle.css'],
+            providers: [person_service_1.PersonService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [person_service_1.PersonService])
     ], AppComponent);
     return AppComponent;
 }());

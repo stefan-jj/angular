@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Person } from './person';
 
-const PERSONS: Person[] = [
+const PEOPLE: Person[] = [
   { id: 1, name: 'John', fact: 'Has webbed feet' },
   { id: 2, name: 'Jeff', fact: 'Is a Jedi master' },
   { id: 3, name: 'Eric', fact: 'Is 8 foot tall' },
@@ -11,20 +11,17 @@ const PERSONS: Person[] = [
   { id: 7, name: 'Jenny', fact: 'Owns a restaurant' },
   { id: 8, name: 'Stacey', fact: 'Secret super hero' },
   { id: 9, name: 'Andy', fact: 'Has a robotic arm' },
-  { id: 10, name: 'Ben', fact: 'Shady warehouse worker' }
+  { id: 10, name: 'Ben', fact: 'Shady warehouse worker' },
 ];
-
 @Component({
   selector: 'my-app',
   templateUrl: 'app/template.html',
   styleUrls: ['app/style.css']
 })
-
 export class AppComponent {
-  title = 'List of People';
-  persons = PERSONS;
+  title = 'List of people';
+  people = PEOPLE;
   selectedPerson: Person;
-    
   onSelect(person: Person): void {
     this.selectedPerson = person;
   }

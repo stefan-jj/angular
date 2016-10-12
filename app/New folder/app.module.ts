@@ -16,5 +16,4 @@ import { PersonDetailComponent } from './person-detail.component';
   ],
   bootstrap: [ AppComponent ]
 })
-
 export class AppModule { }

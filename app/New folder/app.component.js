@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var PERSONS = [
+var PEOPLE = [
     { id: 1, name: 'John', fact: 'Has webbed feet' },
     { id: 2, name: 'Jeff', fact: 'Is a Jedi master' },
     { id: 3, name: 'Eric', fact: 'Is 8 foot tall' },
@@ -19,12 +19,12 @@ var PERSONS = [
     { id: 7, name: 'Jenny', fact: 'Owns a restaurant' },
     { id: 8, name: 'Stacey', fact: 'Secret super hero' },
     { id: 9, name: 'Andy', fact: 'Has a robotic arm' },
-    { id: 10, name: 'Ben', fact: 'Shady warehouse worker' }
+    { id: 10, name: 'Ben', fact: 'Shady warehouse worker' },
 ];
 var AppComponent = (function () {
     function AppComponent() {
-        this.title = 'List of People';
-        this.persons = PERSONS;
+        this.title = 'List of people';
+        this.people = PEOPLE;
     }
     AppComponent.prototype.onSelect = function (person) {
         this.selectedPerson = person;

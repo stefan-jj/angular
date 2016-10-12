@@ -30,6 +30,29 @@ var PersonsComponent = (function () {
     PersonsComponent.prototype.gotoDetail = function () {
         this.router.navigate(['/detail', this.selectedPerson.id]);
     };
+    PersonsComponent.prototype.add = function (name) {
+        var _this = this;
+        name = name.trim();
+        if (!name) {
+            return;
+        }
+        this.personService.addPerson(name)
+            .then(function (person) {
+            _this.persons.push(person);
+            _this.selectedPerson = null;
+        });
+    };
+    PersonsComponent.prototype.delete = function (person) {
+        var _this = this;
+        this.personService
+            .removePerson(person.id)
+            .then(function () {
+            _this.persons = _this.persons.filter(function (h) { return h !== person; });
+            if (_this.selectedPerson === person) {
+                _this.selectedPerson = null;
+            }
+        });
+    };
     PersonsComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

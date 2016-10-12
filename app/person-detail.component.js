@@ -29,6 +29,11 @@ var PersonDetailComponent = (function () {
     PersonDetailComponent.prototype.goBack = function () {
         this.location.back();
     };
+    PersonDetailComponent.prototype.save = function () {
+        var _this = this;
+        this.personService.update(this.person)
+            .then(function () { return _this.goBack(); });
+    };
     PersonDetailComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

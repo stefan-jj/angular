@@ -33,6 +33,11 @@ export class PersonDetailComponent implements OnInit {
     this.location.back();
   }
     
+  save(): void {
+    this.personService.update(this.person)
+    .then(() => this.goBack());
+  }
+    
   
 
 }

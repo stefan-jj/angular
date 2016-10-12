@@ -12,6 +12,10 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var router_1 = require('@angular/router');
+var http_1 = require('@angular/http');
+// Imports for loading & configuring the in-memory web api
+var angular_in_memory_web_api_1 = require('angular-in-memory-web-api');
+var in_memory_data_service_1 = require('./in-memory-data.service');
 var app_component_1 = require('./app.component');
 var person_detail_component_1 = require('./person-detail.component');
 var persons_component_1 = require('./persons.component');
@@ -25,6 +29,8 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
+                http_1.HttpModule,
+                angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService),
                 router_1.RouterModule.forRoot([
                     {
                         path: '',

@@ -11,8 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
+var router_1 = require('@angular/router');
 var app_component_1 = require('./app.component');
 var person_detail_component_1 = require('./person-detail.component');
+var persons_component_1 = require('./persons.component');
+var person_service_1 = require('./person.service');
+var dashboard_component_1 = require('./dashboard.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -20,11 +24,35 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
-                forms_1.FormsModule
+                forms_1.FormsModule,
+                router_1.RouterModule.forRoot([
+                    {
+                        path: '',
+                        redirectTo: '/dashboard',
+                        pathMatch: 'full'
+                    },
+                    {
+                        path: 'dashboard',
+                        component: dashboard_component_1.DashboardComponent
+                    },
+                    {
+                        path: 'detail/:id',
+                        component: person_detail_component_1.PersonDetailComponent
+                    },
+                    {
+                        path: 'persons',
+                        component: persons_component_1.PersonsComponent
+                    }
+                ])
             ],
             declarations: [
                 app_component_1.AppComponent,
-                person_detail_component_1.PersonDetailComponent
+                dashboard_component_1.DashboardComponent,
+                person_detail_component_1.PersonDetailComponent,
+                persons_component_1.PersonsComponent
+            ],
+            providers: [
+                person_service_1.PersonService
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

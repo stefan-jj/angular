@@ -9,30 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var person_service_1 = require('./person.service');
 var AppComponent = (function () {
-    function AppComponent(personService) {
-        this.personService = personService;
+    function AppComponent() {
         this.title = 'List of People';
     }
-    AppComponent.prototype.getPersons = function () {
-        var _this = this;
-        this.personService.getPersons().then(function (persons) { return _this.persons = persons; });
-    };
-    AppComponent.prototype.ngOnInit = function () {
-        this.getPersons();
-    };
-    AppComponent.prototype.onSelect = function (person) {
-        this.selectedPerson = person;
-    };
     AppComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'my-app',
-            templateUrl: 'app/listTemplate.html',
-            styleUrls: ['app/listStyle.css'],
-            providers: [person_service_1.PersonService]
+            templateUrl: './appComponent.html',
+            styleUrls: ['./appComponent.css']
         }), 
-        __metadata('design:paramtypes', [person_service_1.PersonService])
+        __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());

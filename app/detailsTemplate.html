@@ -6,7 +6,9 @@
         <input [(ngModel)]="person.name" placeholder="name"/>
       </div>
       <div>
-          <label><b>Fact:</b> {{person.name}} </label>
-        {{person.fact}}
+          <label><b>Fact:</b> </label>
+        {{person.name}} {{person.fact}}
       </div>
+     <button (click)="goBack()">Back</button>
+
 </div>

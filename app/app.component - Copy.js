@@ -9,22 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var mock_persons_1 = require('./mock-persons');
-var PersonService = (function () {
-    function PersonService() {
+var AppComponent = (function () {
+    function AppComponent() {
+        this.title = 'List of People';
     }
-    PersonService.prototype.getPersons = function () {
-        return Promise.resolve(mock_persons_1.PERSONS);
-    };
-    PersonService.prototype.getPerson = function (id) {
-        return this.getPersons()
-            .then(function (persons) { return persons.find(function (person) { return person.id === id; }); });
-    };
-    PersonService = __decorate([
-        core_1.Injectable(), 
+    AppComponent = __decorate([
+        core_1.Component({
+            selector: 'my-app',
+            template: "\n        <h1>{{title}}</h1>\n        <a routerLink=\"/persons\">Persons</a>\n        <router-outlet></router-outlet>\n    "
+        }), 
         __metadata('design:paramtypes', [])
-    ], PersonService);
-    return PersonService;
+    ], AppComponent);
+    return AppComponent;
 }());
-exports.PersonService = PersonService;
-//# sourceMappingURL=person.service.js.map
+exports.AppComponent = AppComponent;
+//# sourceMappingURL=app.component - Copy.js.map

@@ -10,35 +10,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var common_1 = require('@angular/common');
 var person_service_1 = require('./person.service');
-var PersonDetailComponent = (function () {
-    function PersonDetailComponent(personService, route, location) {
+var PersonsComponent = (function () {
+    function PersonsComponent(router, personService) {
+        this.router = router;
         this.personService = personService;
-        this.route = route;
-        this.location = location;
     }
-    PersonDetailComponent.prototype.ngOnInit = function () {
+    PersonsComponent.prototype.getPersons = function () {
         var _this = this;
-        this.route.params.forEach(function (params) {
-            var id = +params['id'];
-            _this.personService.getPerson(id)
-                .then(function (person) { return _this.person = person; });
-        });
+        this.personService.getPersons().then(function (persons) { return _this.persons = persons; });
     };
-    PersonDetailComponent.prototype.goBack = function () {
-        this.location.back();
+    PersonsComponent.prototype.ngOnInit = function () {
+        this.getPersons();
     };
-    PersonDetailComponent = __decorate([
+    PersonsComponent.prototype.onSelect = function (person) {
+        this.selectedPerson = person;
+    };
+    PersonsComponent.prototype.gotoDetail = function () {
+        this.router.navigate(['/detail', this.selectedPerson.id]);
+    };
+    PersonsComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'my-person-detail',
-            templateUrl: './detailsTemplate.html',
-            styleUrls: ['./detailsStyle.css']
+            selector: 'my-persons',
+            templateUrl: './listTemplate.html',
+            styleUrls: ['./listStyle.css']
         }), 
-        __metadata('design:paramtypes', [person_service_1.PersonService, router_1.ActivatedRoute, common_1.Location])
-    ], PersonDetailComponent);
-    return PersonDetailComponent;
+        __metadata('design:paramtypes', [router_1.Router, person_service_1.PersonService])
+    ], PersonsComponent);
+    return PersonsComponent;
 }());
-exports.PersonDetailComponent = PersonDetailComponent;
-//# sourceMappingURL=person-detail.component.js.map
+exports.PersonsComponent = PersonsComponent;
+//# sourceMappingURL=persons.component.js.map

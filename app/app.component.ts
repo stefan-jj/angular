@@ -1,32 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-
-import { Person } from './person';
-import { PersonService } from './person.service';
-
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'my-app',
-  templateUrl: 'app/listTemplate.html',
-  styleUrls: ['app/listStyle.css'],
-  providers: [PersonService]
+    moduleId: module.id,
+    selector: 'my-app',
+    templateUrl: './appComponent.html', 
+    styleUrls: ['./appComponent.css']
 })
 
-export class AppComponent implements OnInit{
-  title = 'List of People';
-  persons: Person[];
-  selectedPerson: Person;
-    
-  constructor(private personService: PersonService) { }
-    
-  getPersons(): void {
-    this.personService.getPersons().then(persons => this.persons = persons);
-  }
-    
-  ngOnInit(): void {
-    this.getPersons();
-  }
-    
-  onSelect(person: Person): void {
-    this.selectedPerson = person;
-  }
+export class AppComponent{
+    title = 'List of People';
 }

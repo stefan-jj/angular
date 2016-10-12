@@ -1,5 +1,6 @@
-<div class="listContainer">
-<h1>{{title}}</h1>
+
+<div class="listAll">
+    <div class="listView">
     <h2>Click a person to see their fact...</h2>
     <ul class="persons">
       <li *ngFor="let person of persons"
@@ -8,7 +9,12 @@
         <span class="badge">{{person.id}}</span> {{person.name}}
       </li>
     </ul>
-</div>
-<div class="personDetails">
-    <my-person-detail [person]="selectedPerson"></my-person-detail>
+    </div>
+
+    <div  *ngIf="selectedPerson">
+      <h2>
+        Find out more about {{selectedPerson.name | uppercase}}?
+      </h2>
+      <button (click)="gotoDetail()">View Details</button>
+    </div>
 </div>

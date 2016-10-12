@@ -46,12 +46,12 @@
       border-radius: 4px 0 0 4px;
     }
 
-.listContainer{
-    float: left;
+.listAll{
+    width: 890px;
 }
 
-.personDetails{
+
+.viewMore{
     float: right;
-    margin-right: 100px;
-    margin-top: 200px;
+/*    margin-bottom: 400px;*/
 }

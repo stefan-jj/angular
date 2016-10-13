@@ -2,15 +2,16 @@
     <div class="head">
       <h2>Details about the {{item.name}}</h2>
     </div>
-    <div><label class="id"><b>ID: </b> </label>{{item.id}}</div>
-      <div>
-        <label class="name"><b>Name: </b> </label>
+    <div class="id"><label><b>ID: </b> </label>{{item.id}}</div>
+      <div class="name">
+        <label><b>Name: </b> </label>
         <input [(ngModel)]="item.name" placeholder="name"/>
       </div>
-      <div>
-          <label class="price"><b>Price: </b> </label>
+      <div class="price">
+          <label><b>Price: </b> </label>
         {{item.price | currency:'GBP':true:'1.2-2'}}
       </div>
+    <div class="category"><label><b>Category: </b> </label>{{item.category}}</div>
      <button class="back" (click)="goBack()">Back</button>
      <button class="save" (click)="save()">Save</button>
     

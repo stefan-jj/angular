@@ -29,6 +29,29 @@ var CatalogueComponent = (function () {
     CatalogueComponent.prototype.gotoDetail = function () {
         this.router.navigate(['/detail', this.selectedItem.id]);
     };
+    CatalogueComponent.prototype.add = function (name) {
+        var _this = this;
+        name = name.trim();
+        if (!name) {
+            return;
+        }
+        this.itemService.addItem(name)
+            .then(function (item) {
+            _this.items.push(item);
+            _this.selectedItem = null;
+        });
+    };
+    CatalogueComponent.prototype.delete = function (item) {
+        var _this = this;
+        this.itemService
+            .removeItem(item.id)
+            .then(function () {
+            _this.items = _this.items.filter(function (h) { return h !== item; });
+            if (_this.selectedItem === item) {
+                _this.selectedItem = null;
+            }
+        });
+    };
     CatalogueComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

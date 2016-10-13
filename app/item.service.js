@@ -31,30 +31,28 @@ var ItemService = (function () {
         return this.getItems()
             .then(function (items) { return items.find(function (item) { return item.id === id; }); });
     };
-    //    update(person: Person): Promise<Person> {
-    //      const url = `${this.personsUrl}/${person.id}`;
-    //      return this.http
-    //        .put(url, JSON.stringify(person), {headers: this.headers})
-    //        .toPromise()
-    //        .then(() => person)
-    //        .catch(this.handleError);
-    //    }
-    //    addPerson(name: string): Promise<Person> {
-    //      return this.http
-    //        .post(this.personsUrl, JSON.stringify({name: name}), {headers: this.headers})
-    //        .toPromise()
-    //        .then(res => res.json().data)
-    //        .catch(this.handleError);
-    //    }
-    //    
-    //    
-    //    removePerson(id: number): Promise<void> {
-    //      const url = `${this.personsUrl}/${id}`;
-    //      return this.http.delete(url, {headers: this.headers})
-    //        .toPromise()
-    //        .then(() => null)
-    //        .catch(this.handleError);
-    //    }
+    ItemService.prototype.update = function (item) {
+        var url = this.itemsUrl + "/" + item.id;
+        return this.http
+            .put(url, JSON.stringify(item), { headers: this.headers })
+            .toPromise()
+            .then(function () { return item; })
+            .catch(this.handleError);
+    };
+    ItemService.prototype.addItem = function (name) {
+        return this.http
+            .post(this.itemsUrl, JSON.stringify({ name: name }), { headers: this.headers })
+            .toPromise()
+            .then(function (res) { return res.json().data; })
+            .catch(this.handleError);
+    };
+    ItemService.prototype.removeItem = function (id) {
+        var url = this.itemsUrl + "/" + id;
+        return this.http.delete(url, { headers: this.headers })
+            .toPromise()
+            .then(function () { return null; })
+            .catch(this.handleError);
+    };
     ItemService.prototype.handleError = function (error) {
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);

@@ -29,6 +29,11 @@ var ItemDetailComponent = (function () {
     ItemDetailComponent.prototype.goBack = function () {
         this.location.back();
     };
+    ItemDetailComponent.prototype.save = function () {
+        var _this = this;
+        this.itemService.update(this.item)
+            .then(function () { return _this.goBack(); });
+    };
     ItemDetailComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

@@ -33,10 +33,10 @@ export class ItemDetailComponent implements OnInit {
     this.location.back();
   }
     
-//  save(): void {
-//    this.personService.update(this.person)
-//    .then(() => this.goBack());
-//  }
+  save(): void {
+    this.itemService.update(this.item)
+    .then(() => this.goBack());
+  }
     
   
 

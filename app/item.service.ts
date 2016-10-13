@@ -30,32 +30,32 @@ export class ItemService {
                  .then(items => items.find(item => item.id === id));
     }
     
-//    update(person: Person): Promise<Person> {
-//      const url = `${this.personsUrl}/${person.id}`;
-//      return this.http
-//        .put(url, JSON.stringify(person), {headers: this.headers})
-//        .toPromise()
-//        .then(() => person)
-//        .catch(this.handleError);
-//    }
+    update(item: Item): Promise<Item> {
+      const url = `${this.itemsUrl}/${item.id}`;
+      return this.http
+        .put(url, JSON.stringify(item), {headers: this.headers})
+        .toPromise()
+        .then(() => item)
+        .catch(this.handleError);
+    }
     
     
-//    addPerson(name: string): Promise<Person> {
-//      return this.http
-//        .post(this.personsUrl, JSON.stringify({name: name}), {headers: this.headers})
-//        .toPromise()
-//        .then(res => res.json().data)
-//        .catch(this.handleError);
-//    }
-//    
-//    
-//    removePerson(id: number): Promise<void> {
-//      const url = `${this.personsUrl}/${id}`;
-//      return this.http.delete(url, {headers: this.headers})
-//        .toPromise()
-//        .then(() => null)
-//        .catch(this.handleError);
-//    }
+    addItem(name: string): Promise<Item> {
+      return this.http
+        .post(this.itemsUrl, JSON.stringify({name: name}), {headers: this.headers})
+        .toPromise()
+        .then(res => res.json().data)
+        .catch(this.handleError);
+    }
+    
+    
+    removeItem(id: number): Promise<void> {
+      const url = `${this.itemsUrl}/${id}`;
+      return this.http.delete(url, {headers: this.headers})
+        .toPromise()
+        .then(() => null)
+        .catch(this.handleError);
+    }
     
     
     private handleError(error: any): Promise<any> {

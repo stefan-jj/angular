@@ -1,0 +1,72 @@
+<div class="listAll">
+    <div class="title">
+        <h1>Explore our range of products</h1>
+    </div>
+    
+    <div class="listView">
+<!--        <h2>Explore our range of gnomes...</h2>-->
+        <div class="container">
+            <ul class="items">
+                  <li class="liItem" *ngFor="let item of items"
+                    [class.selected]="item === selectedItem"
+                    (click)="onSelect(item)">
+                  
+                    <img src={{item.image}} >
+                  <div class="tag">
+                    <div id="id">ID: {{item.id}}</div>
+                    <h4>{{item.name}}</h4>
+                    <p>{{item.price | currency:'GBP':true:'1.2-2'}}</p>
+                    <button (click)="gotoDetail()">View More</button>
+                  </div>
+<!--                    <span class="badge">{{item.id}}</span> {{item.name}}-->
+        <!--              <img src={{item.image}} width="200px">-->
+                  </li>
+            </ul>
+        </div>
+    </div>
+    
+    
+    
+    
+</div>
+
+
+
+
+
+
+
+
+<!--
+
+<div class="listAll">
+    
+    <div>
+      <label>Person name:</label> <input #personName />
+      <button (click)="add(personName.value); personName.value=''">
+        Add
+      </button>
+      <br>
+      <br>
+      <label>Person fact:</label> <input #personFact />
+    </div>
+    
+    <div class="listView">
+    <h2>Click a person to see their fact...</h2>
+    <ul class="persons">
+      <li *ngFor="let person of persons"
+        [class.selected]="person === selectedPerson"
+        (click)="onSelect(person)">
+        <span class="badge">{{person.id}}</span> {{person.name}} <button class="delete"
+        (click)="delete(person); $event.stopPropagation()">x</button>
+      </li>
+    </ul>
+    </div>
+
+    <div class="viewMore"  *ngIf="selectedPerson">
+      <h2>
+        Find out more about {{selectedPerson.name | uppercase}}?
+      </h2>
+      <button (click)="gotoDetail()">View Details</button>
+    </div>
+</div>-->

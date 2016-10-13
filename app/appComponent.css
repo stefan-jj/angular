@@ -1,0 +1,28 @@
+.background{
+/*    background-image: url("./images/background.jpg");*/
+    height: auto;
+    text-align: center;
+    border: 1px solid black;
+    padding-bottom: 20px;
+    background-image: url("./images/grass1.png");
+}
+
+.title h1{
+    color: white;
+    float: left;
+/*    padding-left: 20px;*/
+}
+
+.enter{
+    float: right;
+/*
+    margin-right: 200px;
+    margin-top: 200px;
+*/
+}
+
+button{
+    font-size: 30px;
+    color: black;
+}
+

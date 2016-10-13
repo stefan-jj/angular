@@ -1,0 +1,12 @@
+.mainPage{
+    background-image: url("./images/background.jpg");
+    height: 800px;
+}
+
+p{
+    color: white;
+    font-size: 60px;
+/*    float: right;*/
+    margin-left: 550px;
+    padding-top: 150px;
+}

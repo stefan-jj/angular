@@ -1,0 +1,51 @@
+.details{
+    color: black;
+/*    text-align: center;*/
+    margin-top: 20px;
+    border: 1px solid black;
+/*    padding: 10px;*/
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2px;
+}
+
+.id{
+    padding-left: 30px;
+    padding-bottom: 20px;
+}
+
+.name{
+    padding-left: 30px;
+    padding-bottom: 20px;
+}
+
+.price{
+    padding-left: 30px;
+    padding-bottom: 20px;
+}
+
+.details h2{
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.head{
+    background-color: darkred;
+    padding-top: 1px;
+}
+
+.head h2{
+    color: white;
+}
+
+button{
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.image{
+    text-align: center;
+    padding-bottom: 20px;
+}

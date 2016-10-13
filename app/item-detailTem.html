@@ -1,0 +1,20 @@
+<div class="details" *ngIf="item">
+    <div class="head">
+      <h2>Details about the {{item.name}}</h2>
+    </div>
+    <div><label class="id"><b>ID: </b> </label>{{item.id}}</div>
+      <div>
+        <label class="name"><b>Name: </b> </label>
+        <input [(ngModel)]="item.name" placeholder="name"/>
+      </div>
+      <div>
+          <label class="price"><b>Price: </b> </label>
+        {{item.price | currency:'GBP':true:'1.2-2'}}
+      </div>
+     <button (click)="goBack()">Back</button>
+    
+    <div class="image">
+        <img src={{item.image}} width="200px">
+    </div>
+<!--     <button (click)="save()">Save</button>-->
+</div>

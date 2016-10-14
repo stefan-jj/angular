@@ -13,6 +13,8 @@ import { CatalogueComponent }      from './catalogue';
 import { MainPageComponent }  from './mainPage';
 import { ItemService }           from './item.service';
 import { ItemDetailComponent }   from './item-detail';
+import { CategoryItemPipe }    from './category-pipe';
+//import { ItemSearchComponent }  from './item-search.component';
 
 @NgModule({
   imports:      [ 
@@ -47,7 +49,7 @@ import { ItemDetailComponent }   from './item-detail';
 //        }
         ])
     ],
-  declarations: [ AppComponent, CatalogueComponent, MainPageComponent, ItemDetailComponent ],
+  declarations: [ AppComponent, CatalogueComponent, MainPageComponent, ItemDetailComponent, CategoryItemPipe ],
     
   providers: [
     ItemService  

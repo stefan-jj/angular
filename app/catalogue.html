@@ -5,17 +5,41 @@
     
     <div class="addNew">
         <p>Add a new item to the catalogue below</p>
+        <p>Then click view details to edit</p>
         <label>Product Name:</label> <input #itemName />
           <button (click)="add(itemName.value); itemName.value=''">
             Add
           </button>
     </div>
+<!--
+    <p>
+  1
+    <input [(ngModel)]="slider" />
+  9
+  </p>
+    <span>{{ slider }}</span>
+    <ul>
+      <li *ngFor="let item of items | categoryItem:slider">
+        {{ item.id }} ({{ item.name }})
+      </li>
+    </ul>
+    <br>
+    <br>
+-->
+    
+<!--    <item-search></item-search>-->
     
     <div class="listView">
 <!--        <h2>Explore our range of gnomes...</h2>-->
+<!--
+        <select #listFilter>
+            <option *ngFor="let item of items" [value]="item.category">{{item.category}}</option>
+        </select>
+-->
         <div class="container">
             <ul class="items">
-                  <li class="liItem" *ngFor="let item of items"
+<!--                  <li class="liItem" *ngFor="let item of (items | categoryItem)"-->
+                    <li class="liItem" *ngFor="let item of items"
                     [class.selected]="item === selectedItem"
                     (click)="onSelect(item)">
                   

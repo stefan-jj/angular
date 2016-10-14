@@ -1,6 +1,7 @@
 .mainPage{
     background-image: url("./images/background.jpg");
     height: 800px;
+    margin-top: -56px;
 }
 
 p{

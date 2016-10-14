@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { Item } from './item';
 import { ItemService } from './item.service';
+import { CategoryItemPipe }  from './category-pipe';
 
 @Component({
     moduleId: module.id,
@@ -14,6 +15,7 @@ import { ItemService } from './item.service';
 export class CatalogueComponent implements OnInit {
     items: Item[];
     selectedItem: Item;
+//    slider:number = 3;
     
     constructor(
     private router: Router,

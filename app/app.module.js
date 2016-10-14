@@ -21,6 +21,8 @@ var catalogue_1 = require('./catalogue');
 var mainPage_1 = require('./mainPage');
 var item_service_1 = require('./item.service');
 var item_detail_1 = require('./item-detail');
+var category_pipe_1 = require('./category-pipe');
+//import { ItemSearchComponent }  from './item-search.component';
 var AppModule = (function () {
     function AppModule() {
     }
@@ -51,7 +53,7 @@ var AppModule = (function () {
                     },
                 ])
             ],
-            declarations: [app_component_1.AppComponent, catalogue_1.CatalogueComponent, mainPage_1.MainPageComponent, item_detail_1.ItemDetailComponent],
+            declarations: [app_component_1.AppComponent, catalogue_1.CatalogueComponent, mainPage_1.MainPageComponent, item_detail_1.ItemDetailComponent, category_pipe_1.CategoryItemPipe],
             providers: [
                 item_service_1.ItemService
             ],

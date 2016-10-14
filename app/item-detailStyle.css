@@ -20,6 +20,11 @@
     padding-bottom: 20px;
 }
 
+.img{
+    padding-left: 30px;
+    padding-bottom: 20px;
+}
+
 .price{
     padding-left: 30px;
     padding-bottom: 20px;
@@ -42,6 +47,10 @@
 
 .head h2{
     color: white;
+}
+
+.head p{
+    font-size: 12px;
 }
 
 .back{

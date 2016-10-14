@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var item_service_1 = require('./item.service');
 var CatalogueComponent = (function () {
+    //    slider:number = 3;
     function CatalogueComponent(router, itemService) {
         this.router = router;
         this.itemService = itemService;

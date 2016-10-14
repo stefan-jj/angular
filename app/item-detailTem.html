@@ -1,6 +1,6 @@
 <div class="details" *ngIf="item">
     <div class="head">
-      <h2>Details about the {{item.name}}</h2>
+      <h2>Details about the {{item.name}}<p>Change and save as appropriate</p></h2>
     </div>
     <div class="id"><label><b>ID: </b> </label>{{item.id}}</div>
       <div class="name">
@@ -9,9 +9,15 @@
       </div>
       <div class="price">
           <label><b>Price: </b> </label>
-        {{item.price | currency:'GBP':true:'1.2-2'}}
+          <input [(ngModel)]="item.price" placeholder="price"/>
       </div>
-    <div class="category"><label><b>Category: </b> </label>{{item.category}}</div>
+    <div class="category"><label><b>Category: </b> </label><input [(ngModel)]="item.category" placeholder="category"/></div>
+    
+      <div class="img">
+          <label><b>Image src: </b> </label>
+          <input [(ngModel)]="item.image" placeholder="image"/>
+      </div>
+    
      <button class="back" (click)="goBack()">Back</button>
      <button class="save" (click)="save()">Save</button>
     

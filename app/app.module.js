@@ -40,12 +40,17 @@ var AppModule = (function () {
                     },
                     {
                         path: '',
-                        redirectTo: '/home',
+                        redirectTo: 'home',
                         pathMatch: 'full'
                     },
                     {
                         path: 'home',
                         component: mainPage_1.MainPageComponent
+                    },
+                    {
+                        path: 'detail',
+                        redirectTo: 'detail/:id',
+                        pathMatch: 'full'
                     },
                     {
                         path: 'detail/:id',

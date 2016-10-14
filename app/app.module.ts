@@ -31,13 +31,18 @@ import { CategoryItemPipe }    from './category-pipe';
           
         {
           path: '',
-          redirectTo: '/home',
+          redirectTo: 'home',
           pathMatch: 'full'
         },
           
         {
           path: 'home',
           component: MainPageComponent
+        },
+        {
+          path: 'detail',
+          redirectTo: 'detail/:id',
+          pathMatch: 'full'
         },
         {
           path: 'detail/:id',

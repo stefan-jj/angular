@@ -1,3 +1,5 @@
+//Component to dispaly all items
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -15,7 +17,6 @@ import { CategoryItemPipe }  from './category-pipe';
 export class CatalogueComponent implements OnInit {
     items: Item[];
     selectedItem: Item;
-//    slider:number = 3;
     
     constructor(
     private router: Router,
@@ -33,10 +34,15 @@ export class CatalogueComponent implements OnInit {
       this.selectedItem = item;
     }
     
-    gotoDetail(): void {
-    this.router.navigate(['/detail', this.selectedItem.id]);
-  }
+//    Navigate to product page
+    isSelected(item: Item) { return item.id === this.selectedId; }
+
+    onSelect(item: Item) {
+        this.router.navigate(['/detail', item.id]);
+    }
     
+    
+//    Add item
     add(name: string): void {
       name = name.trim();
       if (!name) { return; }
@@ -47,7 +53,7 @@ export class CatalogueComponent implements OnInit {
         });
       }
 
-
+//    Delete item
       delete(item: Item): void {
           this.itemService
               .removeItem(item.id)

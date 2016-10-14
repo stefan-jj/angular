@@ -1,3 +1,4 @@
+//Component to dispaly all items
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -12,7 +13,6 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var item_service_1 = require('./item.service');
 var CatalogueComponent = (function () {
-    //    slider:number = 3;
     function CatalogueComponent(router, itemService) {
         this.router = router;
         this.itemService = itemService;
@@ -27,9 +27,12 @@ var CatalogueComponent = (function () {
     CatalogueComponent.prototype.onSelect = function (item) {
         this.selectedItem = item;
     };
-    CatalogueComponent.prototype.gotoDetail = function () {
-        this.router.navigate(['/detail', this.selectedItem.id]);
+    //    Navigate to product page
+    CatalogueComponent.prototype.isSelected = function (item) { return item.id === this.selectedId; };
+    CatalogueComponent.prototype.onSelect = function (item) {
+        this.router.navigate(['/detail', item.id]);
     };
+    //    Add item
     CatalogueComponent.prototype.add = function (name) {
         var _this = this;
         name = name.trim();
@@ -42,6 +45,7 @@ var CatalogueComponent = (function () {
             _this.selectedItem = null;
         });
     };
+    //    Delete item
     CatalogueComponent.prototype.delete = function (item) {
         var _this = this;
         this.itemService

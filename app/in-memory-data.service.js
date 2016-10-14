@@ -1,3 +1,4 @@
+//Exported products array
 "use strict";
 var InMemoryDataService = (function () {
     function InMemoryDataService() {

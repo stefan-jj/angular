@@ -24,15 +24,18 @@ var CatalogueComponent = (function () {
     CatalogueComponent.prototype.ngOnInit = function () {
         this.getItems();
     };
-    CatalogueComponent.prototype.onSelect = function (item) {
-        this.selectedItem = item;
-    };
-    //    Navigate to product page
-    CatalogueComponent.prototype.isSelected = function (item) { return item.id === this.selectedId; };
-    CatalogueComponent.prototype.onSelect = function (item) {
+    CatalogueComponent.prototype.gotoDetail = function (item) {
         this.router.navigate(['/detail', item.id]);
     };
-    //    Add item
+    //    onSelect(item: Item): void {
+    //      this.selectedItem = item;
+    //    }
+    //    isSelected(item: Item) { return item.id === this.selectedId; }
+    //
+    //    onSelect(item: Item) {
+    //        this.router.navigate(['/detail', item.id]);
+    //    }
+    //Add product
     CatalogueComponent.prototype.add = function (name) {
         var _this = this;
         name = name.trim();
@@ -45,7 +48,7 @@ var CatalogueComponent = (function () {
             _this.selectedItem = null;
         });
     };
-    //    Delete item
+    //Delete product
     CatalogueComponent.prototype.delete = function (item) {
         var _this = this;
         this.itemService

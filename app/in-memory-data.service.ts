@@ -1,3 +1,5 @@
+//Exported products array
+
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 export interface Category { category: string; }

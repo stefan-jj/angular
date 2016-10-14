@@ -30,19 +30,23 @@ export class CatalogueComponent implements OnInit {
       this.getItems();
     }
     
-    onSelect(item: Item): void {
-      this.selectedItem = item;
-    }
-    
-//    Navigate to product page
-    isSelected(item: Item) { return item.id === this.selectedId; }
-
-    onSelect(item: Item) {
+    gotoDetail(item: Item): void {
         this.router.navigate(['/detail', item.id]);
     }
     
+//    onSelect(item: Item): void {
+//      this.selectedItem = item;
+//    }
     
-//    Add item
+
+//    isSelected(item: Item) { return item.id === this.selectedId; }
+//
+//    onSelect(item: Item) {
+//        this.router.navigate(['/detail', item.id]);
+//    }
+    
+    
+//Add product
     add(name: string): void {
       name = name.trim();
       if (!name) { return; }
@@ -53,7 +57,7 @@ export class CatalogueComponent implements OnInit {
         });
       }
 
-//    Delete item
+//Delete product
       delete(item: Item): void {
           this.itemService
               .removeItem(item.id)

@@ -1,3 +1,4 @@
+//Never got my filter working
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -12,11 +13,8 @@ var core_1 = require('@angular/core');
 var CategoryItemPipe = (function () {
     function CategoryItemPipe() {
     }
-    CategoryItemPipe.prototype.transform = function (value, args) {
-        var categ = args[0];
-        return value.filter(function (item) {
-            return item.category >= +categ;
-        });
+    CategoryItemPipe.prototype.transform = function (value) {
+        return value.filter(function (item) { return item.name.startsWith('w'); });
     };
     CategoryItemPipe = __decorate([
         core_1.Pipe({ name: 'categoryItem' }), 
@@ -25,4 +23,27 @@ var CategoryItemPipe = (function () {
     return CategoryItemPipe;
 }());
 exports.CategoryItemPipe = CategoryItemPipe;
+//import {Pipe, PipeTransform} from 'angular2/core';
+//
+//@Pipe({name: 'values'})
+//export class ValuesPipe implements PipeTransform {
+//    transform(value: any, args?: any[]): Object[] {
+//        let keyArr: any[] = Object.keys(value),
+//            dataArr = [],
+//            keyName = args[0];
+//
+//        keyArr.forEach((key: any) => {
+//            value[key][keyName] = key;
+//            dataArr.push(value[key])
+//        });
+//
+//        if(args[1]) {
+//            dataArr.sort((a: Object, b: Object): number => {
+//                return a[keyName] > b[keyName] ? 1 : -1;
+//            });
+//        }
+//
+//        return dataArr;
+//    }
+//} 
 //# sourceMappingURL=category-pipe.js.map
